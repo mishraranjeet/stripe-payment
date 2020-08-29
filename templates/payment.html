@@ -8,21 +8,21 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
+    <div class="row" >
         <div class="col-xs-12 col-md-4">
-            <div class="panel panel-default">
+            <div class="panel panel-default" style="margin-top:10%;">
                 <div class="panel-heading">
                     <h3 class="panel-title">
                         Enter card Details
                     </h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form action="{{ url_for('add_card_details') }}" method="POST" enctype="multipart/form-data" role="form">
                     <div class="form-group">
                         <label for="cardNumber">
                             CARD NUMBER</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="cardNumber" placeholder="Enter 16 digit Card Number"
+                            <input type="text" class="form-control" name="cardnumber" id="cardNumber" placeholder="Enter 16 digit Card Number"
                                 required autofocus />
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                         </div>
@@ -33,21 +33,21 @@
                                 <label for="expityMonth">
                                     EXPIRY DATE</label>
                                 <div class="col-xs-6 col-lg-6 pl-ziro">
-                                    <input type="text" class="form-control" id="expityMonth" placeholder="MM" required />
+                                    <input type="text" class="form-control" name="expmonth" id="expityMonth" placeholder="MM" required />
                                 </div>
                                 <div class="col-xs-6 col-lg-6 pl-ziro">
-                                    <input type="text" class="form-control" id="expityYear" placeholder="YY" required /></div>
+                                    <input type="text" class="form-control" name="expyear" id="expityYear" placeholder="YY" required /></div>
                             </div>
                         </div>
                         <div class="col-xs-5 col-md-5 pull-right">
                             <div class="form-group">
                                 <label for="cvCode">
                                     CV CODE</label>
-                                <input type="password" class="form-control" id="cvCode" placeholder="CV" required />
+                                <input type="password" class="form-control" name="card_cvv" id="cvCode" placeholder="CV" required />
                             </div>
                         </div>
                     </div>
-                    <a href="http://www.jquery2dotnet.com" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+                    <input type="submit" class="btn btn-success btn-lg btn-block" value="Pay" role="button">
                     </form>
                 </div>
             </div>
